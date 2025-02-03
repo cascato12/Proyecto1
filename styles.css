@@ -3,7 +3,7 @@ body {
   font-family: 'Poppins', sans-serif;
   display: grid;
   grid-template-columns: 250px 1fr;
-  grid-template-rows: 160px 1fr 60px; /* Ajusté la altura del header */
+  grid-template-rows: 160px 1fr 60px;
   grid-template-areas:
     'header header'
     'aside main'
@@ -13,8 +13,7 @@ body {
   color: white;
 }
 
-/*Header*/
-
+/* Header */
 header {
   grid-area: header;
   background: #4a148c;
@@ -87,8 +86,7 @@ nav a:hover {
   background: #c47f00;
 }
 
-/*Aside */
-
+/* Aside */
 aside {
   grid-area: aside;
   background: #242424;
@@ -126,27 +124,28 @@ aside ul a:hover {
   color: #f5a623;
 }
 
-/*Main*/
-
+/* Main */
 main {
   grid-area: main;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra el contenido horizontalmente */
+  align-items: center;
 }
 
 h1 {
   text-transform: uppercase;
   color: white;
-  text-align: center; /* Centra el texto */
-  margin-bottom: 10px; /* Espacio entre h1 y p */
+  text-align: center;
+  font-size: 75px;
+  margin-bottom: 10px;
 }
 
 p {
   color: #ccc;
-  text-align: center; /* Centra el texto */
-  margin-bottom: 20px; /* Espacio entre p y el grid de tarjetas */
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 50px;
 }
 
 .game-grid {
@@ -162,19 +161,19 @@ p {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s;
-  overflow: hidden; /* Asegura que la imagen no se salga del borde */
-  position: relative; /* Necesario para la superposición */
+  overflow: hidden;
+  position: relative;
 }
 
 .game-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .game-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block; /* Elimina el espacio inferior de la imagen */
+  display: block;
 }
 
 .game-info {
@@ -182,7 +181,7 @@ p {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+  background: rgba(0, 0, 0, 0.7);
   padding: 10px;
   color: white;
   text-align: center;
@@ -196,11 +195,10 @@ p {
 .game-info .price {
   margin: 5px 0 0;
   font-size: 16px;
-  color: #f5a623; /* Color naranja para el precio */
+  color: #f5a623;
 }
 
-/*Footer*/
-
+/* Footer */
 footer {
   grid-area: footer;
   background: #1e1e1e;
@@ -209,4 +207,113 @@ footer {
   align-items: center;
   justify-content: center;
   padding: 10px;
+}
+
+/* Media Responsive  */
+
+/* Pantallas pequeñas (menos de 768px) */
+@media (max-width: 768px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+      'header'
+      'aside'
+      'main'
+      'footer';
+  }
+
+  header {
+    padding: 20px;
+    height: auto;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-bar {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  nav {
+    gap: 20px;
+  }
+
+  nav a {
+    font-size: 18px;
+  }
+
+  .sell-button {
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+
+  aside {
+    padding: 10px;
+  }
+
+  aside h3 {
+    font-size: 20px;
+    padding-bottom: 50px;
+  }
+
+  aside ul li {
+    font-size: 18px;
+    padding-bottom: 30px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  .game-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 90%;
+  }
+}
+
+/* Tablets (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .game-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    width: 80%;
+  }
+
+  .search-bar {
+    width: 300px;
+  }
+
+  nav {
+    gap: 20px;
+  }
+
+  nav a {
+    font-size: 20px;
+  }
+
+  .sell-button {
+    padding: 10px 20px;
+    font-size: 20px;
+  }
+}
+
+/* Pantallas grandes (más de 1024px) */
+@media (min-width: 1024px) {
+  .game-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 100px;
+    width: 60%;
+  }
 }
