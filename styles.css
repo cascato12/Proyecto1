@@ -224,7 +224,7 @@ footer {
   }
 
   header {
-    padding: 20px;
+    padding: 10px;
     height: auto;
     flex-direction: column;
     gap: 10px;
@@ -235,14 +235,21 @@ footer {
     gap: 10px;
   }
 
+  .logo img {
+    height: 60px;
+  }
+
   .search-bar {
     width: 100%;
     padding: 10px 20px;
     font-size: 16px;
+    margin-top: 10px;
   }
 
   nav {
-    gap: 20px;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
   }
 
   nav a {
@@ -252,6 +259,7 @@ footer {
   .sell-button {
     padding: 10px 20px;
     font-size: 18px;
+    margin-top: 10px;
   }
 
   aside {
@@ -260,26 +268,29 @@ footer {
 
   aside h3 {
     font-size: 20px;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
   }
 
   aside ul li {
     font-size: 18px;
-    padding-bottom: 30px;
+    padding-bottom: 15px;
   }
 
   h1 {
-    font-size: 40px;
+    font-size: 30px;
+    margin-bottom: 5px;
   }
 
   p {
-    font-size: 18px;
+    font-size: 16px;
+    margin-bottom: 20px;
   }
 
   .game-grid {
     grid-template-columns: 1fr;
     gap: 20px;
     width: 90%;
+    height: 90%;
   }
 }
 
@@ -287,25 +298,25 @@ footer {
 @media (min-width: 768px) and (max-width: 1024px) {
   .game-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
-    width: 80%;
+    gap: 30px;
+    width: 90%;
   }
 
   .search-bar {
-    width: 300px;
+    width: 250px;
   }
 
   nav {
-    gap: 20px;
+    gap: 15px;
   }
 
   nav a {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .sell-button {
-    padding: 10px 20px;
-    font-size: 20px;
+    padding: 10px 15px;
+    font-size: 18px;
   }
 }
 
@@ -313,7 +324,7 @@ footer {
 @media (min-width: 1024px) {
   .game-grid {
     grid-template-columns: repeat(5, 1fr);
-    gap: 100px;
-    width: 60%;
+    gap: 50px;
+    width: 80%;
   }
 }
